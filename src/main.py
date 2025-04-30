@@ -13,11 +13,6 @@ from assets.texts.page_texts import *
 # сonstants
 VERTICAL = 3 * pi / 2
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-LITE_GREEN = "#186318"
-LITE_GREEN_OVER = "#00e600"
-DARK_GREEN = "#004D00"
-DARK_GREEN_CON = "#000000"
-STORG_GREEN = "#42ff49"
 
 FORES_GREEN = "#186318"
 ELECTRIC_LIME = "#00e600"
@@ -38,11 +33,11 @@ def _change_container_color(e):
 
 
 def _change_text_color(e):
-    if e.control.content.color == LITE_GREEN_OVER:
-        e.control.content.color = STORG_GREEN
+    if e.control.content.color == ELECTRIC_LIME:
+        e.control.content.color = LIGHT_MOSS
         e.control.update()
     else:
-        e.control.content.color = LITE_GREEN_OVER
+        e.control.content.color = ELECTRIC_LIME
         e.control.update()
 
 
@@ -96,7 +91,7 @@ def _create_work_item(value):
     return ft.Container(
         ft.Text(
             value=value,
-            color=LITE_GREEN_OVER,
+            color=ELECTRIC_LIME,
         ),
         on_hover=_change_text_color,
     )
@@ -164,9 +159,9 @@ def _main_window_left(page):
                                         # on_click=_reach_to_me_handler,
                                         style=ft.ButtonStyle(
                                             shape=ft.RoundedRectangleBorder(radius=0),
-                                            overlay_color=DARK_GREEN, 
+                                            overlay_color=DARK_FOREST, 
                                             color=ft.colors.WHITE,
-                                            bgcolor=LITE_GREEN,
+                                            bgcolor=FORES_GREEN,
                                             text_style=ft.TextStyle(size=16),
                                         ),
                                         width=180,
@@ -256,7 +251,7 @@ def _main_window_right(page, photo):
                                                         ft.Container(
                                                             ft.Text(
                                                                 value="[view all]",
-                                                                color=LITE_GREEN_OVER,
+                                                                color=ELECTRIC_LIME,
                                                             ),
                                                             expand=True,
                                                             alignment=ft.alignment.bottom_center,
@@ -271,7 +266,7 @@ def _main_window_right(page, photo):
                                                 bgcolor="#132612",
                                                 
                                                 border=ft.Border(
-                                                    left=ft.BorderSide(width=2, color=LITE_GREEN_OVER),
+                                                    left=ft.BorderSide(width=2, color=ELECTRIC_LIME),
                                                 ),
                                                 padding=ft.padding.symmetric(horizontal=20, vertical=20),
                                             ),
